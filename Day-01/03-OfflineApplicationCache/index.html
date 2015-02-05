@@ -7,9 +7,16 @@
 	<link rel="stylesheet" href="style-online.css">
 	<script src="taskStorage.js"></script>
 	<script src="taskManager.js"></script>
+	<script>
+	window.applicationCache.addEventListener("updateready", function(){
+		var reload = window.confirm("A new version of the application is available. Do you want to refresh?")
+		if (reload)
+			window.location.reload();
+	});
+	</script>
 </head>
 <body>
-	<h1>Task Manager</h1>
+	<h1>Task Manager - V1.1</h1>
 	
 	<div>
 		<label for="">Task :</label>
