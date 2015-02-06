@@ -5,8 +5,9 @@ var server = nodejsWebSocket.createServer(function (con){
 
 	con.on("text", function(msg){
 		console.log(msg , "[message from client]");
-		con.sendText("message recieved at " + new Date().toString());
-	})
+		for(var i=0;i<server.connections.length;i++)
+			server.connections[i].sendText(msg);
+	});
 });
 server.listen(9090);
 console.log("node server running on port 9090");
