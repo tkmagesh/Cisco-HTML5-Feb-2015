@@ -14,7 +14,7 @@
 	function onMessageFromServer(msgEvt){
 		var msg = msgEvt.data;
 		document.getElementById("divMessages").innerHTML += msg + "<br/>";
-	}
+	} 
 	function onBtnSendClick(){
 		var msg = document.getElementById("txtMessage").value;
 		chatServerConnection.send(msg);
